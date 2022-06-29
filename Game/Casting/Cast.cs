@@ -98,6 +98,5 @@ namespace DinoGame2.Game.Casting
                 actors[group].Remove(actor);
             }
         }
-
     }
 }

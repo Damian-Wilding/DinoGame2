@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using DinoGame2.Casting;
-using DinoGame2.Services;
+using DinoGame2.Game.Casting;
+using DinoGame2.Game.Services;
 
 
-namespace DinoGame2.Scripting
+namespace DinoGame2.Game.Scripting
 {
     /// <summary>
     /// <para>An output action that draws all the actors.</para>
