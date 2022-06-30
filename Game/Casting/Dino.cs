@@ -97,9 +97,9 @@ namespace DinoGame2.Game.Casting
         /// </summary>
         private void PrepareBody()
         {
-            int x = Constants.MAX_X / 2;
-            int y = 10;
-            Point position = new Point(x * Constants.CELL_SIZE, y);
+            //int x = Constants.MAX_X / 2;
+            //int y = 10;
+            Point position = Constants.DinoSpawn;
             Point velocity = new Point(0, 0);
             string text = 1 == 0 ? "8" : "#";
             Color color = 1 == 0 ? Constants.BLUE : Constants.BLUE;

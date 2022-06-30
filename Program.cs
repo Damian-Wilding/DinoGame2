@@ -3,6 +3,7 @@ using DinoGame2.Game.Directing;
 using DinoGame2.Game.Scripting;
 using DinoGame2.Game.Services;
 
+
 namespace DinoGame2.Game
 {
     /// <summary>
@@ -26,9 +27,9 @@ namespace DinoGame2.Game
             //creating a banner to show the score
             Actor banner = new Actor();
             banner.SetText("0");
-            banner.SetFontSize(FONT_SIZE);
-            banner.SetColor(WHITE);
-            banner.SetPosition(new Point(CELL_SIZE, 0));
+            banner.SetFontSize(Constants.FONT_SIZE);
+            banner.SetColor(Constants.WHITE);
+            banner.SetPosition(new Point(Constants.CELL_SIZE, 0));
             cast.AddActor("banner", banner);
 
             //create the services
