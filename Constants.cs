@@ -26,6 +26,8 @@ namespace DinoGame2.Game
         public static int GoalPoints = 1;
         public static Point GameOverMessagePosition = new Point (MAX_X / 2, MAX_Y / 2);
         // (Might use this later, but I dont think it will be needed) public static string GameOverMessage = "Game Over"
+        public static int Enemy_Max_Row = ROWS - 2;
+        public static int Enemy_Min_Row = 3;
 
         // Lets make some colors to use in the beta.
         public static Color RED = new Color(255, 0, 0);

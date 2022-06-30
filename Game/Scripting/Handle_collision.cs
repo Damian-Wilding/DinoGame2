@@ -66,8 +66,7 @@ namespace DinoGame2.Game.Scripting
                 }
                 
                 //spawn new enemies
-                Enemy.SpawnEnemies();
-
+                SpawnEnemies();
             }
         }
 
@@ -115,6 +114,34 @@ namespace DinoGame2.Game.Scripting
                     cast.RemoveActor("dino", player);
                 }
             }
+        }
+
+        private void SpawnEnemies()
+
+        {
+            //first delete all enemies from the game
+            Cast cast = new Cast();
+            List<Actor> enemies = cast.GetActors("emeny");
+            foreach (Actor enemy in enemies)
+                {
+                    cast.RemoveActor("enemy", enemy);
+                }
+
+            //spawn the enemies every round
+            
+            //loop that will run 3 times (to spawn 3 enemies)
+            for (int i = 0; i < 3; i++)
+            {
+                //make new enemy
+                Enemy enemy = new Enemy();
+                //set his position
+                Random random = new Random();
+                int RandomNumber = random.Next(Constants.Enemy_Min_Row, Constants.Enemy_Max_Row);
+                enemy.SetPosition(new Point (Constants.MAX_X / 2,RandomNumber * Constants.CELL_SIZE));
+                //add that enemy to the cast
+                cast.AddActor("emeny", enemy);
+            }
+        
         }
     }
 }

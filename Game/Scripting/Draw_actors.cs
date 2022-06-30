@@ -14,7 +14,7 @@ namespace DinoGame2.Game.Scripting
         private VideoService videoService;
 
         /// <summary>
-        /// Constructs a new instance of Contro_actor_action using the given KeyboardService.
+        /// Constructs a new instance of Draw_actors using the given KeyboardService.
         /// </summary>
         public Draw_actors(VideoService videoService)
         {
@@ -26,7 +26,7 @@ namespace DinoGame2.Game.Scripting
         {
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
-            global goal = (Goal)cast.GetFirstActor("goal");
+            Goal goal = (Goal)cast.GetFirstActor("goal");
             Enemy enemy = new Enemy();
             List<Actor> enemies = enemy.GetAllActors();
             
