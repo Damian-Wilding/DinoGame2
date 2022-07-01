@@ -10,6 +10,7 @@ namespace DinoGame2.Game.Casting
         {
             Random random = new Random();
             direction = random.Next(1, 3);
+            //this.SetColor(Constants.RED);     //not needed for now since this is handled in the collision class
         }
 
         //program the enemies movements

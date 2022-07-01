@@ -28,7 +28,7 @@ namespace DinoGame2.Game.Scripting
             Score score = (Score)cast.GetFirstActor("score");
             Goal goal = (Goal)cast.GetFirstActor("goal");
             Enemy enemy = new Enemy();
-            List<Actor> enemies = enemy.GetAllActors();
+            List<Actor> enemies = cast.GetActors("enemy");
             
 
     

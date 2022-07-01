@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "S/xi/A5WROtgIoWM2ACaxBNHuyW+RaN3q4h1kNaA1L7txWviH/ytE4oOz/jCzecxo4K2YkqiBXpLA0tqLQtxMw==",
+  "dgSpecHash": "2Q5JgBvB0Y56fRfKZ7TZyEB78dMCYo/8jxx4cDE6vpIBFZNtdc3rBE77WWkt9EvL/PaEN+PKQc7tdr4x1HhesQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\wildm\\Documents\\SEMESTER 6\\CLASSES class\\C Sharp\\DinoGame2\\DinoGame2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\wildm\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
+    "C:\\Users\\wildm\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
