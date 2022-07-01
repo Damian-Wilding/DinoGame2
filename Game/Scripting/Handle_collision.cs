@@ -44,29 +44,35 @@ namespace DinoGame2.Game.Scripting
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
             Actor banner = cast.GetFirstActor("banner");
-            Goal goal = (Goal)cast.GetFirstActor("goal");
+            //Goal goal = (Goal)cast.GetFirstActor("goal");
+            List<Actor> goal = cast.GetActors("goal");
 
             //turn score into an int
             int BannerAsINT = int.Parse(banner.GetText());
-            if (dino.GetPosition().Equals(goal.GetPosition()))
+
+            
+            foreach (Actor goalSegment in goal)
             {
-            //starts a new level
-                //updates the score on the banner
-                BannerAsINT += Constants.GoalPoints;
-                string NewTotalAsString = BannerAsINT.ToString();
-                banner.SetText(NewTotalAsString);
-
-                //Moves dino back to spawn point
-                dino.SetPosition(Constants.DinoSpawn);
-
-                //delete all enemies from screen
-                foreach (Actor enemy in enemies)
+                if (dino.GetPosition().Equals(goalSegment.GetPosition()))
                 {
-                    cast.RemoveActor("enemy", enemy);
+                //starts a new level
+                    //updates the score on the banner
+                    BannerAsINT += Constants.GoalPoints;
+                    string NewTotalAsString = BannerAsINT.ToString();
+                    banner.SetText(NewTotalAsString);
+
+                    //Moves dino back to spawn point
+                    dino.SetPosition(Constants.DinoSpawn);
+
+                    //delete all enemies from screen
+                    foreach (Actor enemy in enemies)
+                    {
+                        cast.RemoveActor("enemy", enemy);
+                    }
+
+                    //spawn new enemies
+                    SpawnEnemies();
                 }
-                
-                //spawn new enemies
-                SpawnEnemies();
             }
         }
 

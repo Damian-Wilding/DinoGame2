@@ -29,7 +29,7 @@ namespace DinoGame2.Game.Casting
         /// Gets the actor's color.
         /// </summary>
         /// <returns>The color.</returns>
-        public Color GetColor()
+        public virtual Color GetColor()
         {
             return color;
         }
@@ -38,7 +38,7 @@ namespace DinoGame2.Game.Casting
         /// Gets the actor's font size.
         /// </summary>
         /// <returns>The font size.</returns>
-        public int GetFontSize()
+        public virtual int GetFontSize()
         {
             return fontSize;
         }
@@ -47,7 +47,7 @@ namespace DinoGame2.Game.Casting
         /// Gets the actor's position.
         /// </summary>
         /// <returns>The position.</returns>
-        public Point GetPosition()
+        public virtual Point GetPosition()
         {
             return position;
         }
@@ -56,7 +56,7 @@ namespace DinoGame2.Game.Casting
         /// Gets the actor's text.
         /// </summary>
         /// <returns>The text.</returns>
-        public string GetText()
+        public virtual string GetText()
         {
             return text;
         }

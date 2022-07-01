@@ -14,7 +14,7 @@ namespace DinoGame2.Game.Directing
 
     public class Director
     {
-        private VideoService videoService = null;
+        private VideoService videoService;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
