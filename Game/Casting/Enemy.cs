@@ -4,7 +4,8 @@ namespace DinoGame2.Game.Casting
 {
     public class Enemy : Actor
     {
-        int direction; 
+        int direction;
+        Point velocity = new Point(0,0);
         public Enemy()
         {
             Random random = new Random();
@@ -14,9 +15,9 @@ namespace DinoGame2.Game.Casting
         //program the enemies movements
         public override void MoveNext()
         {
-
+//______________________________________________________ put in something here later to make the velocitoes change when the enemies touch the side of the screen.
             Point NewPosition;
-            Point velocity;
+            
             //give the object a direction based on the direction variable
             //code for moving to the right
             if (direction == 1)
