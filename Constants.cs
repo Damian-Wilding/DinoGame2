@@ -36,5 +36,6 @@ namespace DinoGame2.Game
         public static Color GREEN = new Color(0, 255, 0);
         public static Color ORANGE = new Color(255, 165, 0);
         public static Color BLUE = new Color(0, 255, 255);
+        public static Color BLACK = new Color(0, 0, 0);
     }
 }

@@ -14,7 +14,7 @@ namespace DinoGame2.Game.Casting
     {
         private string text = "";
         private int fontSize = 15;
-        private Color color = Constants.WHITE;
+        private Color color = Constants.BLACK;
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
 
@@ -65,7 +65,7 @@ namespace DinoGame2.Game.Casting
         /// Gets the actor's current velocity.
         /// </summary>
         /// <returns>The velocity.</returns>
-        public Point GetVelocity()
+        public virtual Point GetVelocity()
         {
             return velocity;
         }

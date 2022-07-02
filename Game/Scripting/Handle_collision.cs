@@ -50,7 +50,7 @@ namespace DinoGame2.Game.Scripting
             //turn score into an int
             int BannerAsINT = int.Parse(banner.GetText());
 
-            
+
             foreach (Actor goalSegment in goal)
             {
                 if (dino.GetPosition().Equals(goalSegment.GetPosition()))
@@ -140,14 +140,7 @@ namespace DinoGame2.Game.Scripting
             {
                 //make new enemy
                 Enemy enemy = new Enemy();
-                //sets the enemies color
-                enemy.SetColor(Constants.RED);
-                //set his position
                 Random random = new Random();
-                int RandomNumber = random.Next(Constants.Enemy_Min_Row, Constants.Enemy_Max_Row);
-                enemy.SetPosition(new Point (Constants.MAX_X / 2,RandomNumber * Constants.CELL_SIZE));
-                // gives the enemies a text
-                enemy.SetText("O");
                 //add that enemy to the cast
                 cast.AddActor("emeny", enemy);
             }
