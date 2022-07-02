@@ -140,7 +140,6 @@ namespace DinoGame2.Game.Scripting
             {
                 //make new enemy
                 Enemy enemy = new Enemy();
-                Random random = new Random();
                 //add that enemy to the cast
                 cast.AddActor("emeny", enemy);
             }

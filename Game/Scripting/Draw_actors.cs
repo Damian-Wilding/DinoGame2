@@ -27,21 +27,12 @@ namespace DinoGame2.Game.Scripting
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
             Goal goal = (Goal)cast.GetFirstActor("goal");
-            Enemy enemy = new Enemy();
             List<Actor> enemies = cast.GetActors("enemy");
-            
 
-    
-            //Actor score = cast.GetFirstActor("score");
-            //Actor food = cast.GetFirstActor("food");
-            //List<Actor> messages = cast.GetActors("messages");
-            
             videoService.ClearBuffer();
-            //videoService.DrawActors(segments);
             videoService.DrawActor(score);
             videoService.DrawActor(dino);
             videoService.DrawActor(goal);
-            //videoService.DrawActor(food);
             videoService.DrawActors(enemies);
             videoService.FlushBuffer();
         }

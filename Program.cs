@@ -19,10 +19,10 @@ namespace DinoGame2.Game
         {
             //creating the cast
             Cast cast = new Cast();
-            cast.AddActor("Dino", new Dino());
-            cast.AddActor("Enemy", new Enemy());
-            cast.AddActor("Goal", new Goal());
-            cast.AddActor("Score", new Score());
+            cast.AddActor("dino", new Dino());
+            cast.AddActor("enemy", new Enemy());
+            cast.AddActor("goal", new Goal());
+            cast.AddActor("score", new Score());
 
             //creating a banner to show the score
             Actor banner = new Actor();

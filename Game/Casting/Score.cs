@@ -12,6 +12,10 @@ namespace DinoGame2.Game.Casting
     public class Score : Actor
     {
         private int points = 0;
+        private int fontSize = Constants.FONT_SIZE;
+        private Color color = Constants.WHITE;
+        private string text = "0";
+        private Point position = new Point (100,100);
 
         /// <summary>
         /// Constructs a new instance of an Food.
@@ -29,6 +33,38 @@ namespace DinoGame2.Game.Casting
         {
             this.points += points;
             SetText($"Score: {this.points}");
+        }
+
+        /// <summary>
+        /// Returns the scores' text content
+        /// </summary>
+        public override string GetText()
+        {
+            return this.text;
+        }
+
+        /// <summary>
+        /// Returns the scores' color
+        /// </summary>
+        public override Color GetColor()
+        {
+            return this.color;
+        }
+
+        /// <summary>
+        /// Returns the scores' position
+        /// </summary>
+        public override Point GetPosition()
+        {
+            return this.position;
+        }
+
+        /// <summary>
+        /// Returns the scores' fontsize
+        /// </summary>
+        public override int GetFontSize()
+        {
+            return this.fontSize;
         }
     }
 }

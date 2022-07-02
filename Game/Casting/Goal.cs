@@ -7,15 +7,15 @@ namespace DinoGame2.Game.Casting
         
         public Goal()
         {
-            this.SetColor(Constants.BLUE);
+            MakeTheGoal();
+        }
+       
+        public void MakeTheGoal()
+        {
+            this.SetColor(Constants.YELLOW);
             this.SetPosition(new Point(1,0));
             this.SetText("O");
             this.SetVelocity(new Point(0,0));
         }
-       
-        //public void MakeTheGoal()
-        //{
-        //    
-        //}
     }
 }
