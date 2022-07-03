@@ -21,8 +21,17 @@ namespace DinoGame2.Game
             Cast cast = new Cast();
             cast.AddActor("dino", new Dino());
             cast.AddActor("enemy", new Enemy());
-            cast.AddActor("goal", new Goal());
             cast.AddActor("score", new Score());
+            cast.AddActor("goal", new Goal());
+
+            //////////////////for (int i = 1; i <= Constants.COLUMNS; i++)
+            //////////////////{
+            //////////////////    Goal goal = new Goal();
+            //////////////////    Point position = new Point(i * Constants.CELL_SIZE, 0);
+            //////////////////    goal.SetPosition(position);
+            //////////////////    
+            //////////////////}
+            
 
             //creating a banner to show the score
             //Actor banner = new Actor();

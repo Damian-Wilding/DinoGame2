@@ -145,7 +145,7 @@ namespace DinoGame2.Game.Casting
         /// </summary>
         /// <param name="velocity">The given velocity.</param>
         /// <exception cref="ArgumentException">When velocity is null.</exception>
-        public void SetVelocity(Point velocity)
+        public virtual void SetVelocity(Point velocity)
         {
             if (velocity == null)
             {

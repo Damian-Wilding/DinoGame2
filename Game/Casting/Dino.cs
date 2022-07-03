@@ -67,7 +67,15 @@ namespace DinoGame2.Game.Casting
         /// <returns>The dino's velocity as a Point</returns>
         public override Point GetVelocity()
         {
-            return velocity;
+            return this.velocity;
+        }
+
+        /// <summary>
+        /// Sets the velocity of the dino
+        /// <summary>
+        public override void SetVelocity(Point newVelocity)
+        {
+            this.velocity = newVelocity;
         }
 
         /// <inheritdoc/>
@@ -75,7 +83,7 @@ namespace DinoGame2.Game.Casting
         {
             int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
             int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
-            position = new Point(x, y);
+            this.position = new Point(x, y);
         }
 
         /// <summary>

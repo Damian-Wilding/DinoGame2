@@ -19,7 +19,7 @@ namespace DinoGame2.Game
         public static int MAX_X = 900;
         public static int MAX_Y = 600;
 
-        public static int FRAME_RATE = 10;
+        public static int FRAME_RATE = 30;
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Dino Game 2.0";
         public static Point DinoSpawn = new Point (MAX_X / 2, MAX_Y - 15);

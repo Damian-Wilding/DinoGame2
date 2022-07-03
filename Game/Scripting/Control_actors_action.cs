@@ -13,7 +13,8 @@ namespace DinoGame2.Game.Scripting
     public class Control_actors_action : Action
     {
         private KeyboardService keyboardService;
-        private Point direction = new Point(Constants.CELL_SIZE, 0);
+        private Point direction = new Point(0, 0);
+        Dino dino;
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -26,6 +27,7 @@ namespace DinoGame2.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
+            dino = (Dino)cast.GetFirstActor("dino");
             // left
             if (keyboardService.IsKeyDown("left"))
             {
@@ -34,24 +36,24 @@ namespace DinoGame2.Game.Scripting
             }
 
             // right
-            if (keyboardService.IsKeyDown("right"))
+            else if (keyboardService.IsKeyDown("right"))
             {
                 direction = new Point(Constants.CELL_SIZE, 0);
                 System.Console.WriteLine("moving right");
             }
 
-            // up
-            if (keyboardService.IsKeyDown("up"))
-            {
-                direction = new Point(0, -Constants.CELL_SIZE);
-                System.Console.WriteLine("moving up");
-            }
-
             // down
-            if (keyboardService.IsKeyDown("down"))
+            else if (keyboardService.IsKeyDown("down"))
             {
                 direction = new Point(0, Constants.CELL_SIZE);
                 System.Console.WriteLine("moving down");
+            }
+
+            // up
+            else if (keyboardService.IsKeyDown("up"))
+            {
+                direction = new Point(0, -Constants.CELL_SIZE);
+                System.Console.WriteLine("moving up");
             }
 
             //none
@@ -60,9 +62,12 @@ namespace DinoGame2.Game.Scripting
                 direction = new Point(0, 0);
                 System.Console.WriteLine("not moving");
             }
+
             System.Console.WriteLine($"{direction.GetX()}, {direction.GetY()}");
-            cast.GetFirstActor("dino").SetVelocity(direction);
-            cast.GetFirstActor("dino").MoveNext();
+            dino.SetVelocity(direction);
+            System.Console.WriteLine(dino.GetVelocity().GetX());
+            System.Console.WriteLine(dino.GetVelocity().GetY());
+            //cast.GetFirstActor("dino").MoveNext();
         }
     }
 } 
