@@ -14,12 +14,12 @@ namespace DinoGame2.Game
     {
         //Initialize the 
         public static int COLUMNS = 40;
-        public static int ROWS = 20;
+        public static int ROWS = 40; // not sure why this stuff -> doesnt work (MAX_Y / CELL_SIZE) - ((MAX_Y / CELL_SIZE)% CELL_SIZE);
         public static int CELL_SIZE = 15;
         public static int MAX_X = 900;
         public static int MAX_Y = 600;
 
-        public static int FRAME_RATE = 15;
+        public static int FRAME_RATE = 30;
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Dino Game 2.0";
         public static Point DinoSpawn = new Point (MAX_X / 2, 15);

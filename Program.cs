@@ -25,12 +25,12 @@ namespace DinoGame2.Game
             cast.AddActor("score", new Score());
 
             //creating a banner to show the score
-            Actor banner = new Actor();
-            banner.SetText("0");
-            banner.SetFontSize(Constants.FONT_SIZE);
-            banner.SetColor(Constants.WHITE);
-            banner.SetPosition(new Point(Constants.CELL_SIZE, 0));
-            cast.AddActor("banner", banner);
+            //Actor banner = new Actor();
+            //banner.SetText("0");
+            //banner.SetFontSize(Constants.FONT_SIZE);
+            //banner.SetColor(Constants.WHITE);
+            //banner.SetPosition(new Point(Constants.CELL_SIZE, 0));
+            //cast.AddActor("banner", banner);
 
             //create the services
             KeyboardService keyboardService = new KeyboardService();

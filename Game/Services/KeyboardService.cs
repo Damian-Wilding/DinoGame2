@@ -21,11 +21,11 @@ namespace DinoGame2.Game.Services
         /// </summary>
         public KeyboardService()
         {
-            keys["w"] = KeyboardKey.KEY_W;
-            keys["a"] = KeyboardKey.KEY_A;
-            keys["s"] = KeyboardKey.KEY_S;
-            keys["d"] = KeyboardKey.KEY_D;
-            keys["i"] = KeyboardKey.KEY_I;
+            keys["up"] = KeyboardKey.KEY_UP;
+            keys["left"] = KeyboardKey.KEY_LEFT;
+            keys["down"] = KeyboardKey.KEY_DOWN;
+            keys["right"] = KeyboardKey.KEY_RIGHT;
+            keys["shoot"] = KeyboardKey.KEY_SPACE;
         }
 
         /// <summary>

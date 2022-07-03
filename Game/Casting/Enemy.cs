@@ -24,7 +24,7 @@ namespace DinoGame2.Game.Casting
             {
                 this.velocity = new Point (1, 0);
             }
-            if (this.GetPosition().GetY() == Constants.MAX_Y / Constants.CELL_SIZE)
+            if (this.GetPosition().GetX() == Constants.MAX_X)
             {
                 this.velocity = new Point (-1, 0);
             }

@@ -27,28 +27,36 @@ namespace DinoGame2.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             // left
-            if (keyboardService.IsKeyDown("a"))
+            if (keyboardService.IsKeyDown("left"))
             {
                 direction = new Point(-Constants.CELL_SIZE, 0);
+                System.Console.WriteLine("moving left");
+                cast.GetFirstActor("dino").SetVelocity(direction);
             }
 
             // right
-            if (keyboardService.IsKeyDown("d"))
+            if (keyboardService.IsKeyDown("right"))
             {
                 direction = new Point(Constants.CELL_SIZE, 0);
+                System.Console.WriteLine("moving right");
             }
 
             // up
-            if (keyboardService.IsKeyDown("w"))
+            if (keyboardService.IsKeyDown("up"))
             {
                 direction = new Point(0, -Constants.CELL_SIZE);
+                System.Console.WriteLine("moving up");
             }
 
             // down
-            if (keyboardService.IsKeyDown("s"))
+            if (keyboardService.IsKeyDown("down"))
             {
                 direction = new Point(0, Constants.CELL_SIZE);
+                System.Console.WriteLine("moving down");
             }
+            System.Console.WriteLine(direction.GetX());
+            direction = new Point(0, 0);
+            cast.GetFirstActor("dino").SetVelocity(direction);
         }
     }
-}
+} 

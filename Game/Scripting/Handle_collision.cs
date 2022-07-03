@@ -43,12 +43,12 @@ namespace DinoGame2.Game.Scripting
             List<Actor> enemies = cast.GetActors("emeny");
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
-            Actor banner = cast.GetFirstActor("banner");
+            //Actor banner = cast.GetFirstActor("banner");
             //Goal goal = (Goal)cast.GetFirstActor("goal");
             List<Actor> goal = cast.GetActors("goal");
 
             //turn score into an int
-            int BannerAsINT = int.Parse(banner.GetText());
+            int BannerAsINT = int.Parse(score.GetText());
 
 
             foreach (Actor goalSegment in goal)
@@ -59,7 +59,7 @@ namespace DinoGame2.Game.Scripting
                     //updates the score on the banner
                     BannerAsINT += Constants.GoalPoints;
                     string NewTotalAsString = BannerAsINT.ToString();
-                    banner.SetText(NewTotalAsString);
+                    score.SetText(NewTotalAsString);
 
                     //Moves dino back to spawn point
                     dino.SetPosition(Constants.DinoSpawn);
@@ -82,12 +82,12 @@ namespace DinoGame2.Game.Scripting
             List<Actor> enemies = cast.GetActors("emeny");
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
-            Actor banner = cast.GetFirstActor("banner");
+            //Actor banner = cast.GetFirstActor("banner");
             Goal goal = (Goal)cast.GetFirstActor("goal");
             List<Actor> dinos = cast.GetActors("dino");
 
             //turn score into an int
-            int BannerAsINT = int.Parse(banner.GetText());
+            int BannerAsINT = int.Parse(score.GetText());
             foreach (Actor enemy in enemies)
             {
                 if (dino.GetPosition().Equals(enemy.GetPosition()))
@@ -100,8 +100,8 @@ namespace DinoGame2.Game.Scripting
 
         private void HandleGameOver(Cast cast)
         {
-            Actor banner = cast.GetFirstActor("banner");
-            int BannerAsINT = int.Parse(banner.GetText());
+            Actor score = cast.GetFirstActor("score");
+            int BannerAsINT = int.Parse(score.GetText());
 
             if (isGameOver == true)
             {
