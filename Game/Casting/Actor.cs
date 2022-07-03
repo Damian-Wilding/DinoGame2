@@ -141,6 +141,22 @@ namespace DinoGame2.Game.Casting
         }
 
         /// <summary>
+        /// virtual method to be inherrited that gets the hitbox point list in the class it's in.
+        /// </summary>
+        public virtual List<Point> GetHitboxList()
+        {
+            return new List<Point>();
+        }
+
+        /// <summary>
+        /// virtual method to be inherrited that sets the hitbox point list in the class that inherrits it.
+        /// </summary>
+        public virtual void SetHitboxList()
+        {
+            
+        }
+        
+        /// <summary>
         /// Sets the actor's velocity to the given value.
         /// </summary>
         /// <param name="velocity">The given velocity.</param>

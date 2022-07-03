@@ -9,6 +9,9 @@ namespace DinoGame2.Game.Casting
         Color color;
         string text;
         Point position;
+        List<Point> enemyHitboxList = new List<Point>();
+
+        int fontSize = Constants.DinoAndEnemyFont_Size;        
         public Enemy()
         {
             SetupEnemy();
@@ -64,6 +67,23 @@ namespace DinoGame2.Game.Casting
         }
 
         /// <summary>
+        /// Sets the enemy's hitbox list
+        /// </summary>
+        public override void SetHitboxList()
+        {
+            this.enemyHitboxList.Clear();
+            Point TopLeft = this.GetPosition();
+            Point BottomLeft = new Point(this.GetPosition().GetX(), this.GetPosition().GetY() + this.fontSize);
+            Point TopRight = new Point(this.GetPosition().GetX() + this.fontSize, this.GetPosition().GetY());
+            Point BottomRight = new Point(this.GetPosition().GetX() + this.fontSize, this.GetPosition().GetY() + this.fontSize);
+            enemyHitboxList.Add(TopLeft);
+            enemyHitboxList.Add(BottomLeft);
+            enemyHitboxList.Add(TopRight);
+            enemyHitboxList.Add(BottomRight);
+        }
+
+
+        /// <summary>
         /// SetupEnemy sets all the values of the enemy instance.
         /// </summary>
         public void SetupEnemy()
@@ -76,6 +96,8 @@ namespace DinoGame2.Game.Casting
             this.SetColor(color);
             this.SetText(text);
             this.SetPosition(position);
+
+            this.SetFontSize(this.fontSize);
         }
 
 

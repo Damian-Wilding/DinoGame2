@@ -14,8 +14,8 @@ namespace DinoGame2.Game.Casting
         private Point position = Constants.DinoSpawn;
         string text = "D";
         Point velocity = new Point(0, 0);
-        int fontSize = Constants.FONT_SIZE;
-        Actor dino = new Actor();
+        int fontSize = Constants.DinoAndEnemyFont_Size;
+        List<Point> dinoHitboxList = new List<Point>();
 
         /// <summary>
         /// Constructs a new instance of a Dino.
@@ -32,6 +32,14 @@ namespace DinoGame2.Game.Casting
         public override Color GetColor()
         {
             return this.color;
+        }
+
+        /// <summary>
+        /// Gets the dino's hitbox list
+        /// </summary>
+        public override List<Point> GetHitboxList()
+        {
+            return this.dinoHitboxList;
         }
 
         /// <summary>
@@ -68,6 +76,22 @@ namespace DinoGame2.Game.Casting
         public override Point GetVelocity()
         {
             return this.velocity;
+        }
+
+        /// <summary>
+        /// Sets the dino's hitbox list
+        /// </summary>
+        public override void SetHitboxList()
+        {
+            this.dinoHitboxList.Clear();
+            Point TopLeft = this.GetPosition();
+            Point BottomLeft = new Point(this.GetPosition().GetX(), this.GetPosition().GetY() + this.fontSize);
+            Point TopRight = new Point(this.GetPosition().GetX() + this.fontSize, this.GetPosition().GetY());
+            Point BottomRight = new Point(this.GetPosition().GetX() + this.fontSize, this.GetPosition().GetY() + this.fontSize);
+            dinoHitboxList.Add(TopLeft);
+            dinoHitboxList.Add(BottomLeft);
+            dinoHitboxList.Add(TopRight);
+            dinoHitboxList.Add(BottomRight);
         }
 
         /// <summary>

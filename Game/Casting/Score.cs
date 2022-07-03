@@ -15,7 +15,7 @@ namespace DinoGame2.Game.Casting
         private int fontSize = Constants.FONT_SIZE;
         private Color color = Constants.WHITE;
         private string text = "0";
-        private Point position = new Point (100,100);
+        private Point position = Constants.scorePosition;
 
         /// <summary>
         /// Constructs a new instance of an Food.
