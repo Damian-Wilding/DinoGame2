@@ -31,7 +31,6 @@ namespace DinoGame2.Game.Scripting
             {
                 direction = new Point(-Constants.CELL_SIZE, 0);
                 System.Console.WriteLine("moving left");
-                cast.GetFirstActor("dino").SetVelocity(direction);
             }
 
             // right
@@ -54,9 +53,16 @@ namespace DinoGame2.Game.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
                 System.Console.WriteLine("moving down");
             }
-            System.Console.WriteLine(direction.GetX());
-            direction = new Point(0, 0);
+
+            //none
+            else
+            {
+                direction = new Point(0, 0);
+                System.Console.WriteLine("not moving");
+            }
+            System.Console.WriteLine($"{direction.GetX()}, {direction.GetY()}");
             cast.GetFirstActor("dino").SetVelocity(direction);
+            cast.GetFirstActor("dino").MoveNext();
         }
     }
 } 

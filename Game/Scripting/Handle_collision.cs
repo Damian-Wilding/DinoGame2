@@ -51,29 +51,29 @@ namespace DinoGame2.Game.Scripting
             int BannerAsINT = int.Parse(score.GetText());
 
 
-            foreach (Actor goalSegment in goal)
-            {
-                if (dino.GetPosition().Equals(goalSegment.GetPosition()))
-                {
-                //starts a new level
-                    //updates the score on the banner
-                    BannerAsINT += Constants.GoalPoints;
-                    string NewTotalAsString = BannerAsINT.ToString();
-                    score.SetText(NewTotalAsString);
-
-                    //Moves dino back to spawn point
-                    dino.SetPosition(Constants.DinoSpawn);
-
-                    //delete all enemies from screen
-                    foreach (Actor enemy in enemies)
-                    {
-                        cast.RemoveActor("enemy", enemy);
-                    }
-
-                    //spawn new enemies
-                    SpawnEnemies();
-                }
-            }
+            //foreach (Actor goalSegment in goal)
+            //{
+            //    if (dino.GetPosition().Equals(goalSegment.GetPosition()))
+            //    {
+            //    //starts a new level
+            //        //updates the score on the banner
+            //        BannerAsINT += Constants.GoalPoints;
+            //        string NewTotalAsString = BannerAsINT.ToString();
+            //        score.SetText(NewTotalAsString);
+//
+            //        //Moves dino back to spawn point
+            //        dino.SetPosition(Constants.DinoSpawn);
+//
+            //        //delete all enemies from screen
+            //        foreach (Actor enemy in enemies)
+            //        {
+            //            cast.RemoveActor("enemy", enemy);
+            //        }
+//
+            //        //spawn new enemies
+            //        SpawnEnemies();
+            //    }
+            //}
         }
 
         //code for if the player touches an enemy

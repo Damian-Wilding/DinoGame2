@@ -11,7 +11,7 @@ namespace DinoGame2.Game.Casting
     public class Dino : Actor
     {
         Color color = Constants.BLUE;
-        Point position = Constants.DinoSpawn;
+        private Point position = Constants.DinoSpawn;
         string text = "D";
         Point velocity = new Point(0, 0);
         int fontSize = Constants.FONT_SIZE;
@@ -73,7 +73,9 @@ namespace DinoGame2.Game.Casting
         /// <inheritdoc/>
         public override void MoveNext()
         {
-            dino.MoveNext();
+            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
+            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
+            position = new Point(x, y);
         }
 
         /// <summary>
