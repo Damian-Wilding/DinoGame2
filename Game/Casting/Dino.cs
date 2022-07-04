@@ -12,7 +12,7 @@ namespace DinoGame2.Game.Casting
     {
         Color color = Constants.BLUE;
         private Point position = Constants.DinoSpawn;
-        string text = "D";
+        public string text = "D";
         Point velocity = new Point(0, 0);
         int fontSize = Constants.DinoAndEnemyFont_Size;
         public List<Point> dinoHitboxList = new List<Point>();

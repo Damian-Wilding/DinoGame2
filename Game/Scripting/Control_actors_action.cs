@@ -62,12 +62,8 @@ namespace DinoGame2.Game.Scripting
                 direction = new Point(0, 0);
                 //System.Console.WriteLine("not moving");
             }
-
-            //System.Console.WriteLine($"{direction.GetX()}, {direction.GetY()}");
+            
             dino.SetVelocity(direction);
-            //System.Console.WriteLine(dino.GetVelocity().GetX());
-            //System.Console.WriteLine(dino.GetVelocity().GetY());
-            //cast.GetFirstActor("dino").MoveNext();
         }
     }
 } 

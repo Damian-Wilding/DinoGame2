@@ -12,7 +12,7 @@ namespace DinoGame2.Game.Casting
     /// </summary>
     public class Actor
     {
-        private string text = "";
+        public string text = "";
         private int fontSize = 15;
         private Color color = Constants.BLACK;
         private Point position = new Point(0, 0);

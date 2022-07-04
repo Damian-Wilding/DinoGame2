@@ -93,14 +93,18 @@ namespace DinoGame2.Game.Scripting
             foreach (Enemy enemy in enemies)
             {
                 //System.Console.WriteLine(enemy);
-                allEnemiesHitboxList.Add(enemy.GetHitboxList());  
+                enemy.SetHitboxList();
+                allEnemiesHitboxList.Add(enemy.GetHitboxList());
+                //System.Console.WriteLine(enemy.GetHitboxList()[0].GetX());
             }
 
+            dino.SetHitboxList();
             foreach (Point DinoPoint in dino.dinoHitboxList)
             {
-                System.Console.WriteLine("haha");
+                //System.Console.WriteLine("haha");
                 foreach (Enemy enemy in enemies)
                 {
+                    enemy.SetHitboxList();
                     Point enemyPosition_TopLeft = enemy.enemyHitboxList[0];
                     Point enemyPosition_BottomRight = enemy.enemyHitboxList[3];
                     int enemyPosition_TopLeftX = enemyPosition_TopLeft.GetX();
@@ -111,36 +115,16 @@ namespace DinoGame2.Game.Scripting
                     
                     int dinoX = DinoPoint.GetX();
                     int dinoY = DinoPoint.GetY();
-                    System.Console.WriteLine(dinoX);
-                    System.Console.WriteLine(dinoY);
                     
-                    //if dinoX is in range 
-                    if (Enumerable.Range(enemyPosition_TopLeftX, enemyPosition_BottomRightX + 1).Contains(dinoX))
+                    // Checks to see if any of the corners of the dino hitbox are inside the enemy.
+                    if ((Enumerable.Range(enemyPosition_TopLeftX, enemy.GetFontSize() + 1).Contains(dinoX)) && (Enumerable.Range(enemyPosition_TopLeftY, enemy.GetFontSize() + 1).Contains(dinoY)))
                     {
-                        System.Console.WriteLine("AHHHHHHHHH");
-                        System.Console.WriteLine("AHHHHHHHHH");
-                        System.Console.WriteLine("AHHHHHHHHH");
-                        //if dinoY is in range 
-                        if (Enumerable.Range(enemyPosition_TopLeftY, enemyPosition_BottomRightY + 1).Contains(dinoY))
-                        {
-                            isGameOver = true;
-                            break;
-
-                            
-                        }
+                        isGameOver = true;
+                        break;
                     }
                 }
             }
         }
-
-
-
-
-        //if (player touches enemy))
-                //{
-                //    //initiate game over
-                //    isGameOver = true;
-                //}
 
         private void HandleGameOver(Cast cast)
         {
@@ -153,6 +137,8 @@ namespace DinoGame2.Game.Scripting
                 Actor GameOverMessage = new Actor();
                 GameOverMessage.SetText($"Game Over \n Score: {BannerAsINT}");
                 GameOverMessage.SetPosition(Constants.GameOverMessagePosition);
+                GameOverMessage.SetColor(Constants.WHITE);
+                GameOverMessage.SetFontSize(Constants.DinoAndEnemyFont_Size);
                 cast.AddActor("messages", GameOverMessage);
 
                 //for now we'll just delete the dino if it touches a bad guy. later I'd like to make a class to make it so you can start a new game.

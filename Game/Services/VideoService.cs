@@ -53,6 +53,7 @@ namespace DinoGame2.Game.Services
         /// <param name="actor">The actor to draw.</param>
         public void DrawActor(Actor actor)
         {
+            //actor.SetText(actor.text);
             string text = actor.GetText();
             int x = actor.GetPosition().GetX();
             int y = actor.GetPosition().GetY();
