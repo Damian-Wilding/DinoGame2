@@ -124,7 +124,7 @@ namespace DinoGame2.Game.Casting
                 throw new ArgumentException("position can't be null");
             }
             this.position = position;
-        }
+        } 
 
         /// <summary>
         /// Sets the actor's text to the given value.

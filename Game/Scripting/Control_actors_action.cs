@@ -32,41 +32,41 @@ namespace DinoGame2.Game.Scripting
             if (keyboardService.IsKeyDown("left"))
             {
                 direction = new Point(-Constants.CELL_SIZE, 0);
-                System.Console.WriteLine("moving left");
+                //System.Console.WriteLine("moving left");
             }
 
             // right
             else if (keyboardService.IsKeyDown("right"))
             {
                 direction = new Point(Constants.CELL_SIZE, 0);
-                System.Console.WriteLine("moving right");
+                //System.Console.WriteLine("moving right");
             }
 
             // down
             else if (keyboardService.IsKeyDown("down"))
             {
                 direction = new Point(0, Constants.CELL_SIZE);
-                System.Console.WriteLine("moving down");
+                //System.Console.WriteLine("moving down");
             }
 
             // up
             else if (keyboardService.IsKeyDown("up"))
             {
                 direction = new Point(0, -Constants.CELL_SIZE);
-                System.Console.WriteLine("moving up");
+                //System.Console.WriteLine("moving up");
             }
 
             //none
             else
             {
                 direction = new Point(0, 0);
-                System.Console.WriteLine("not moving");
+                //System.Console.WriteLine("not moving");
             }
 
-            System.Console.WriteLine($"{direction.GetX()}, {direction.GetY()}");
+            //System.Console.WriteLine($"{direction.GetX()}, {direction.GetY()}");
             dino.SetVelocity(direction);
-            System.Console.WriteLine(dino.GetVelocity().GetX());
-            System.Console.WriteLine(dino.GetVelocity().GetY());
+            //System.Console.WriteLine(dino.GetVelocity().GetX());
+            //System.Console.WriteLine(dino.GetVelocity().GetY());
             //cast.GetFirstActor("dino").MoveNext();
         }
     }

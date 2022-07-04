@@ -21,6 +21,7 @@ namespace DinoGame2.Game
             Cast cast = new Cast();
             cast.AddActor("dino", new Dino());
             cast.AddActor("enemy", new Enemy());
+            cast.AddActor("enemy", new Enemy());
             cast.AddActor("score", new Score());
             cast.AddActor("goal", new Goal());
 

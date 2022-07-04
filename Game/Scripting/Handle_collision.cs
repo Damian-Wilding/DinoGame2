@@ -16,6 +16,7 @@ namespace DinoGame2.Game.Scripting
     public class Handle_collision : Action
     {
         private bool isGameOver = false;
+        List<List<Point>> allEnemiesHitboxList = new List<List<Point>>();
         /// <summary>
         /// Constructs a new instance of Handle_collision.
         /// </summary>
@@ -79,24 +80,67 @@ namespace DinoGame2.Game.Scripting
         //code for if the player touches an enemy
         private void HandleEnemyCollisions(Cast cast)
         {
-            List<Actor> enemies = cast.GetActors("emeny");
+            List<Actor> enemies = cast.GetActors("enemy");
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
-            //Actor banner = cast.GetFirstActor("banner");
             Goal goal = (Goal)cast.GetFirstActor("goal");
             List<Actor> dinos = cast.GetActors("dino");
 
             //turn score into an int
             int BannerAsINT = int.Parse(score.GetText());
-            foreach (Actor enemy in enemies)
+
+            allEnemiesHitboxList.Clear();
+            foreach (Enemy enemy in enemies)
             {
-                if (dino.GetPosition().Equals(enemy.GetPosition()))
+                //System.Console.WriteLine(enemy);
+                allEnemiesHitboxList.Add(enemy.GetHitboxList());  
+            }
+
+            foreach (Point DinoPoint in dino.dinoHitboxList)
+            {
+                System.Console.WriteLine("haha");
+                foreach (Enemy enemy in enemies)
                 {
-                    //initiate game over
-                    isGameOver = true;
+                    Point enemyPosition_TopLeft = enemy.enemyHitboxList[0];
+                    Point enemyPosition_BottomRight = enemy.enemyHitboxList[3];
+                    int enemyPosition_TopLeftX = enemyPosition_TopLeft.GetX();
+                    int enemyPosition_TopLeftY = enemyPosition_TopLeft.GetY();
+                    int enemyPosition_BottomRightX = enemyPosition_BottomRight.GetX();
+                    int enemyPosition_BottomRightY = enemyPosition_BottomRight.GetY();
+
+                    
+                    int dinoX = DinoPoint.GetX();
+                    int dinoY = DinoPoint.GetY();
+                    System.Console.WriteLine(dinoX);
+                    System.Console.WriteLine(dinoY);
+                    
+                    //if dinoX is in range 
+                    if (Enumerable.Range(enemyPosition_TopLeftX, enemyPosition_BottomRightX + 1).Contains(dinoX))
+                    {
+                        System.Console.WriteLine("AHHHHHHHHH");
+                        System.Console.WriteLine("AHHHHHHHHH");
+                        System.Console.WriteLine("AHHHHHHHHH");
+                        //if dinoY is in range 
+                        if (Enumerable.Range(enemyPosition_TopLeftY, enemyPosition_BottomRightY + 1).Contains(dinoY))
+                        {
+                            isGameOver = true;
+                            break;
+
+                            
+                        }
+                    }
                 }
             }
         }
+
+
+
+
+        //if (player touches enemy))
+                //{
+                //    //initiate game over
+                //    isGameOver = true;
+                //}
 
         private void HandleGameOver(Cast cast)
         {

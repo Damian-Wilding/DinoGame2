@@ -9,7 +9,7 @@ namespace DinoGame2.Game.Casting
         Color color;
         string text;
         Point position;
-        List<Point> enemyHitboxList = new List<Point>();
+        public List<Point> enemyHitboxList = new List<Point>();
 
         int fontSize = Constants.DinoAndEnemyFont_Size;        
         public Enemy()
@@ -82,6 +82,13 @@ namespace DinoGame2.Game.Casting
             enemyHitboxList.Add(BottomRight);
         }
 
+        /// <summary>
+        /// Gets the enemy's hitbox list
+        /// </summary>
+        public override List<Point> GetHitboxList()
+        {
+            return this.enemyHitboxList;
+        }
 
         /// <summary>
         /// SetupEnemy sets all the values of the enemy instance.

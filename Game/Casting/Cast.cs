@@ -86,6 +86,14 @@ namespace DinoGame2.Game.Casting
             return result;
         }
 
+        ///// <summary>
+        ///// Gets a list of all the enemies.
+        ///// </summary>
+        //public List<Enemy> GetEnemies()
+        //{
+        //    
+        //}
+
         /// <summary>
         /// Removes the given actor from the given group.
         /// </summary>

@@ -15,7 +15,7 @@ namespace DinoGame2.Game.Casting
         string text = "D";
         Point velocity = new Point(0, 0);
         int fontSize = Constants.DinoAndEnemyFont_Size;
-        List<Point> dinoHitboxList = new List<Point>();
+        public List<Point> dinoHitboxList = new List<Point>();
 
         /// <summary>
         /// Constructs a new instance of a Dino.
