@@ -33,6 +33,11 @@ namespace DinoGame2.Game.Scripting
                 HandleGoalCollisions(cast);
                 HandleGameOver(cast);
             }
+            //else
+            //{
+            //    HandleEnemyCollisions(cast);
+            //    HandleGoalCollisions(cast);
+            //}
         }
 
         /// <summary>
@@ -44,37 +49,35 @@ namespace DinoGame2.Game.Scripting
             List<Actor> enemies = cast.GetActors("emeny");
             Dino dino = (Dino)cast.GetFirstActor("dino");
             Score score = (Score)cast.GetFirstActor("score");
-            //Actor banner = cast.GetFirstActor("banner");
-            //Goal goal = (Goal)cast.GetFirstActor("goal");
-            List<Actor> goal = cast.GetActors("goal");
+            Goal goal = (Goal)cast.GetFirstActor("goal");
+            
 
             //turn score into an int
-            int BannerAsINT = int.Parse(score.GetText());
+            
+            //System.Console.WriteLine(int.Parse(score.text));
 
+            if (dino.GetPosition().GetY() <= goal.GoalsHitBoxY)
+            {
+                dino.SetPosition(Constants.DinoSpawn);
+                foreach (Enemy enemy in enemies)
+                {
+                    cast.RemoveActor("enemy", enemy);
+                    cast.AddActor("enemy", enemy);
+                }
 
-            //foreach (Actor goalSegment in goal)
-            //{
-            //    if (dino.GetPosition().Equals(goalSegment.GetPosition()))
-            //    {
-            //    //starts a new level
-            //        //updates the score on the banner
-            //        BannerAsINT += Constants.GoalPoints;
-            //        string NewTotalAsString = BannerAsINT.ToString();
-            //        score.SetText(NewTotalAsString);
-//
-            //        //Moves dino back to spawn point
-            //        dino.SetPosition(Constants.DinoSpawn);
-//
-            //        //delete all enemies from screen
-            //        foreach (Actor enemy in enemies)
-            //        {
-            //            cast.RemoveActor("enemy", enemy);
-            //        }
-//
-            //        //spawn new enemies
-            //        SpawnEnemies();
-            //    }
-            //}
+                int ScoreAsINT = int.Parse(score.GetText());
+                System.Console.WriteLine(score.GetText());
+                System.Console.WriteLine(ScoreAsINT); 
+                // add the goal points
+                ScoreAsINT += goal.points;
+
+                // turn it back into a string
+                string NewScore = ScoreAsINT.ToString();
+
+                // set that new score as the score to be displayed
+                score.SetText(NewScore);
+
+            }
         }
 
         //code for if the player touches an enemy
@@ -85,23 +88,20 @@ namespace DinoGame2.Game.Scripting
             Score score = (Score)cast.GetFirstActor("score");
             Goal goal = (Goal)cast.GetFirstActor("goal");
             List<Actor> dinos = cast.GetActors("dino");
-
+            string yeah = score.GetText();
             //turn score into an int
-            int BannerAsINT = int.Parse(score.GetText());
+            int BannerAsINT = int.Parse(yeah);
 
             allEnemiesHitboxList.Clear();
             foreach (Enemy enemy in enemies)
             {
-                //System.Console.WriteLine(enemy);
                 enemy.SetHitboxList();
                 allEnemiesHitboxList.Add(enemy.GetHitboxList());
-                //System.Console.WriteLine(enemy.GetHitboxList()[0].GetX());
             }
 
             dino.SetHitboxList();
             foreach (Point DinoPoint in dino.dinoHitboxList)
             {
-                //System.Console.WriteLine("haha");
                 foreach (Enemy enemy in enemies)
                 {
                     enemy.SetHitboxList();
@@ -153,7 +153,6 @@ namespace DinoGame2.Game.Scripting
         }
 
         private void SpawnEnemies()
-
         {
             //first delete all enemies from the game
             Cast cast = new Cast();

@@ -14,7 +14,7 @@ namespace DinoGame2.Game.Casting
         private int points = 0;
         private int fontSize = Constants.FONT_SIZE;
         private Color color = Constants.WHITE;
-        private string text = "0";
+        public new string text = "0";
         private Point position = Constants.scorePosition;
 
         /// <summary>
@@ -65,6 +65,10 @@ namespace DinoGame2.Game.Casting
         public override int GetFontSize()
         {
             return this.fontSize;
+        }
+        public override void SetText(string newscore)
+        {
+            this.text = newscore;
         }
     }
 }

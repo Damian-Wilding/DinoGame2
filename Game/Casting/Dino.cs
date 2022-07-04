@@ -111,6 +111,14 @@ namespace DinoGame2.Game.Casting
         }
 
         /// <summary>
+        /// sets the dino's position
+        /// </summary>
+        public override void SetPosition(Point point)
+        {
+            this.position = point;
+        }
+
+        /// <summary>
         /// Prepares the Dino by setting all its attributes
         /// </summary>
         private void PrepareBody()

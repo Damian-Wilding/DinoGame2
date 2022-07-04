@@ -25,6 +25,7 @@ namespace DinoGame2.Game
         public static string CAPTION = "Dino Game 2.0";
         public static Point DinoSpawn = new Point (MAX_X / 2, MAX_Y - 15);
         public static int GoalPoints = 1;
+        public static Point GoalPosition = new Point(0, 2 * CELL_SIZE);
         public static Point GameOverMessagePosition = new Point (MAX_X / 2, MAX_Y / 2);
         // (Might use this later, but I dont think it will be needed) public static string GameOverMessage = "Game Over"
         public static int Enemy_Max_Row = ROWS - 2;

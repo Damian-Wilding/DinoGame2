@@ -117,7 +117,7 @@ namespace DinoGame2.Game.Casting
         /// </summary>
         /// <param name="position">The given position.</param>
         /// <exception cref="ArgumentException">When position is null.</exception>
-        public void SetPosition(Point position)
+        public virtual void SetPosition(Point position)
         {
             if (position == null)
             {
@@ -131,7 +131,7 @@ namespace DinoGame2.Game.Casting
         /// </summary>
         /// <param name="text">The given text.</param>
         /// <exception cref="ArgumentException">When text is null.</exception>
-        public void SetText(string text)
+        public virtual void SetText(string text)
         {
             if (text == null)
             {
