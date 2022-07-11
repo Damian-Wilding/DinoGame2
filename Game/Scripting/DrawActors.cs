@@ -9,14 +9,14 @@ namespace DinoGame2.Game.Scripting
     /// <para>An output action that draws all the actors.</para>
     /// <para>The responsibility of Draw_actors is to draw each of the actors.</para>
     /// </summary>
-    public class Draw_actors : Action
+    public class DrawActors : Action
     {
         private VideoService videoService;
 
         /// <summary>
         /// Constructs a new instance of Draw_actors using the given KeyboardService.
         /// </summary>
-        public Draw_actors(VideoService videoService)
+        public DrawActors(VideoService videoService)
         {
             this.videoService = videoService;
         }
