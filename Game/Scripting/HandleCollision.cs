@@ -56,6 +56,7 @@ namespace DinoGame2.Game.Scripting
             
             //System.Console.WriteLine(int.Parse(score.text));
 
+            Console.WriteLine(score.GetText());
             if (dino.GetPosition().GetY() <= goal.GoalsHitBoxY)
             {
                 dino.SetPosition(Constants.DinoSpawn);
