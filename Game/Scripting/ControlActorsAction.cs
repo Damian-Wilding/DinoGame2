@@ -10,7 +10,7 @@ namespace DinoGame2.Game.Scripting
     /// The responsibility of ControlActorsAction is to get the direction and move the Dino in that direction.
     /// </para>
     /// </summary>
-    public class Control_actors_action : Action
+    public class ControlActorsAction : Action
     {
         private KeyboardService keyboardService;
         private Point direction = new Point(0, 0);
@@ -19,7 +19,7 @@ namespace DinoGame2.Game.Scripting
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
         /// </summary>
-        public Control_actors_action(KeyboardService keyboardService)
+        public ControlActorsAction(KeyboardService keyboardService)
         {
             this.keyboardService = keyboardService;
         }

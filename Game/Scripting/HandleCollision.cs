@@ -13,14 +13,14 @@ namespace DinoGame2.Game.Scripting
     /// collides with the enemy, or the dino collides with the goal, or the game is over.
     /// </para>
     /// </summary>
-    public class Handle_collision : Action
+    public class HandleCollision : Action
     {
         private bool isGameOver = false;
         List<List<Point>> allEnemiesHitboxList = new List<List<Point>>();
         /// <summary>
         /// Constructs a new instance of Handle_collision.
         /// </summary>
-        public Handle_collision()
+        public HandleCollision()
         {
         }
 

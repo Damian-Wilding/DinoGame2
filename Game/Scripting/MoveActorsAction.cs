@@ -11,12 +11,12 @@ namespace DinoGame2.Game.Scripting
     /// The responsibility of Movement is to move all the actors.
     /// </para>
     /// </summary>
-    public class Movement : Action
+    public class MoveActorsAction : Action
     {
         /// <summary>
         /// Constructs a new instance of Movement.
         /// </summary>
-        public Movement()
+        public MoveActorsAction()
         {
         }
 
