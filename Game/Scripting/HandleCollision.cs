@@ -153,6 +153,7 @@ namespace DinoGame2.Game.Scripting
                 //{
                 //    cast.RemoveActor("dino", player);
                 //}
+                //hi
             }
         }
 
