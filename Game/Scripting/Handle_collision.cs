@@ -90,7 +90,9 @@ namespace DinoGame2.Game.Scripting
             List<Actor> dinos = cast.GetActors("dino");
             string yeah = score.GetText();
             //turn score into an int
-            int BannerAsINT = int.Parse(yeah);
+            // temporary fix
+            //int BannerAsINT = int.Parse(yeah);
+            int BannerAsINT = 0;
 
             allEnemiesHitboxList.Clear();
             foreach (Enemy enemy in enemies)
@@ -129,7 +131,9 @@ namespace DinoGame2.Game.Scripting
         private void HandleGameOver(Cast cast)
         {
             Actor score = cast.GetFirstActor("score");
-            int BannerAsINT = int.Parse(score.GetText());
+            //int BannerAsINT = int.Parse(score.GetText());
+            //temporary fix
+            int BannerAsINT = 0;
 
             if (isGameOver == true)
             {
